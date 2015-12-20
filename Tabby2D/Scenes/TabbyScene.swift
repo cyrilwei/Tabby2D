@@ -30,4 +30,26 @@ enum WorldLayer: CGFloat {
 }
 
 public class TabbyScene: SKScene, TabbyGameInputDelegate {
+
+    public override func didMoveToView(view: SKView) {
+        super.didMoveToView(view)
+
+        createWorldLayers()
+
+        let foundNodes = self[WorldLayer.StaticBackground.nodePath]
+        print(foundNodes)
+    }
+
+    func createWorldLayers() {
+        let worldNode = SKNode()
+        worldNode.name = "world"
+        self.addChild(worldNode)
+
+        for layer in WorldLayer.allLayers {
+            let layerNode = SKNode()
+            layerNode.name = layer.nodeName
+
+            worldNode.addChild(layerNode)
+        }
+    }
 }
