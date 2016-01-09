@@ -15,7 +15,7 @@ Pod::Spec.new do |s|
   s.platform     = :ios, "9.0"
 
   s.source       = { :git => "https://github.com/cyrilwei/Tabby2D.git", :tag => '0.1' }
-  s.source_files = "Tabby2D/**/*.swift"
+  s.source_files = "Tabby2D/**/*.swift", "Tabby2D-TiledMap/**/*.swift"
 
   s.framework    = "SpriteKit"
   s.requires_arc = true

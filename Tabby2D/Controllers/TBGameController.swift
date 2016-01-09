@@ -1,5 +1,5 @@
 //
-//  TabbyGameController.swift
+//  TBGameController.swift
 //  Tabby2D
 //
 //  Created by Cyril Wei on 11/1/15.
@@ -8,6 +8,6 @@
 
 import Foundation
 
-class TabbyGameController {
+public class TBGameController {
     
 }
