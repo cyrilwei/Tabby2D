@@ -47,9 +47,6 @@ public class TBScene: SKScene, TBGameInputDelegate {
         addCamera()
 
         createWorldLayers()
-
-        let foundNodes = self[WorldLayer.HUD.nodePath]
-        print(foundNodes)
     }
 
     public override func addChild(node: SKNode) {
@@ -60,10 +57,17 @@ public class TBScene: SKScene, TBGameInputDelegate {
         }
     }
 
+    public func addChild(node: SKNode, toLayer layer: WorldLayer) {
+        if let layerNode = self[layer.nodePath].first {
+            layerNode.addChild(node)
+        }
+    }
+
     func createWorldLayers() {
         for layer in WorldLayer.allLayers {
             let layerNode = SKNode()
             layerNode.name = layer.nodeName
+            layerNode.zPosition = layer.rawValue
 
             if layer == .HUD {
                 self.theCamera.addChild(layerNode)
@@ -83,6 +87,7 @@ public class TBScene: SKScene, TBGameInputDelegate {
 
     private func addCamera() {
         theCamera.name = WorldLayer.Camera.nodeName
+        theCamera.zPosition = WorldLayer.Camera.rawValue
         self.addChild(theCamera)
 
         self.camera = theCamera
