@@ -11,6 +11,7 @@
 		F11DE3EB1BE6A4E000CFDB2F /* Tabby2D.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F11DE3E01BE6A4E000CFDB2F /* Tabby2D.framework */; };
 		F11DE4041BE6A5AB00CFDB2F /* TBScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = F11DE3FF1BE6A5AB00CFDB2F /* TBScene.swift */; };
 		F11DE4051BE6A5AB00CFDB2F /* TBDirector.swift in Sources */ = {isa = PBXBuildFile; fileRef = F11DE4001BE6A5AB00CFDB2F /* TBDirector.swift */; };
+		F12304D71C421AC1005C908F /* SKScene+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F12304D61C421AC1005C908F /* SKScene+Extension.swift */; };
 		F13044E31BE6A68B0071EE55 /* SpriteKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F13044E21BE6A68B0071EE55 /* SpriteKit.framework */; };
 		F13044E71BE6A9EC0071EE55 /* TBGameController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F13044E51BE6A9EC0071EE55 /* TBGameController.swift */; };
 		F13044E81BE6A9EC0071EE55 /* TBGameInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = F13044E61BE6A9EC0071EE55 /* TBGameInput.swift */; };
@@ -37,6 +38,7 @@
 		F11DE3F11BE6A4E100CFDB2F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F11DE3FF1BE6A5AB00CFDB2F /* TBScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TBScene.swift; sourceTree = "<group>"; };
 		F11DE4001BE6A5AB00CFDB2F /* TBDirector.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TBDirector.swift; sourceTree = "<group>"; };
+		F12304D61C421AC1005C908F /* SKScene+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "SKScene+Extension.swift"; sourceTree = "<group>"; };
 		F13044E21BE6A68B0071EE55 /* SpriteKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SpriteKit.framework; path = System/Library/Frameworks/SpriteKit.framework; sourceTree = SDKROOT; };
 		F13044E51BE6A9EC0071EE55 /* TBGameController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TBGameController.swift; sourceTree = "<group>"; };
 		F13044E61BE6A9EC0071EE55 /* TBGameInput.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TBGameInput.swift; sourceTree = "<group>"; };
@@ -88,6 +90,7 @@
 		F11DE3E21BE6A4E000CFDB2F /* Tabby2D */ = {
 			isa = PBXGroup;
 			children = (
+				F12304D51C421AAC005C908F /* Extensions */,
 				F13044E41BE6A9EC0071EE55 /* Controllers */,
 				F11DE3FC1BE6A5AB00CFDB2F /* Scenes */,
 				F11DE4001BE6A5AB00CFDB2F /* TBDirector.swift */,
@@ -111,6 +114,14 @@
 				F11DE3FF1BE6A5AB00CFDB2F /* TBScene.swift */,
 			);
 			path = Scenes;
+			sourceTree = "<group>";
+		};
+		F12304D51C421AAC005C908F /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				F12304D61C421AC1005C908F /* SKScene+Extension.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 		F13044E41BE6A9EC0071EE55 /* Controllers */ = {
@@ -254,6 +265,7 @@
 				F19023101C36359E00DEA19C /* TBTileNode.swift in Sources */,
 				F11DE4041BE6A5AB00CFDB2F /* TBScene.swift in Sources */,
 				F13044E71BE6A9EC0071EE55 /* TBGameController.swift in Sources */,
+				F12304D71C421AC1005C908F /* SKScene+Extension.swift in Sources */,
 				F19023121C36368E00DEA19C /* TBTiledScene.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
