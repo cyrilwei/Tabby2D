@@ -19,4 +19,6 @@ Pod::Spec.new do |s|
 
   s.framework    = "SpriteKit"
   s.requires_arc = true
+
+  s.dependency     "SwiftyJSON"
 end

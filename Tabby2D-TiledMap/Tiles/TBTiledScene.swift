@@ -9,18 +9,48 @@
 import SpriteKit
 
 public class TBTiledScene: TBScene {
-    public static let defaultTileSize = CGSizeMake(64.0, 32.0)
-    public var tileSize: CGSize
-
-    public init(size: CGSize, tileSize: CGSize = TBTiledScene.defaultTileSize) {
-        self.tileSize = tileSize
-
-        super.init(size: size)
+    private var map: TBTiledMap?
+    
+    public var atlasName: String {
+        return map?.atlases.first?.name ?? ""
     }
+    
 
-    public required init?(coder aDecoder: NSCoder) {
-        self.tileSize = TBTiledScene.defaultTileSize
+    public func loadMap(map: TBTiledMap) {
+        self.map = map
+    }
+    
+    public override func didMoveToView(view: SKView) {
+        super.didMoveToView(view)
 
-        super.init(coder: aDecoder)
+        addMapNodes()
+    }
+    
+    private func addMapNodes() {
+        guard let map = map else { return }
+        
+        let halfTileWidth = map.tileWidth / 2.0
+        let halfTileHeight = map.tileHeight / 2.0
+        
+        let tileSize = CGSizeMake(map.tileWidth, map.tileHeight)
+        
+        let atlas = SKTextureAtlas(named: atlasName)
+        let atlasTiles = map.atlases.first?.tiles ?? [String]()
+        
+        for layer in map.layers {
+            let mapNode = SKNode()
+            mapNode.zPosition = layer.zPosition
+
+            for y in 0..<layer.height {
+                for x in 0..<layer.width {
+                    let node = SKSpriteNode(texture: atlas.textureNamed(atlasTiles[layer.data[y * layer.width + x] - 1]), size: tileSize)
+                    node.userInteractionEnabled = false
+                    
+                    node.position = CGPointMake(CGFloat(x - y) * halfTileWidth, CGFloat(x + y) * halfTileHeight)
+                    mapNode.addChild(node)
+                }
+            }
+            self.addChild(mapNode, toLayer: layer.baseWorldLayer)
+        }
     }
 }

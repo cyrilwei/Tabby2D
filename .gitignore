@@ -2,3 +2,5 @@
 .idea
 xcuserdata
 project.xcworkspace
+*.lock
+Pods

@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5ABD040D7846B7319E256FA5 /* TBTiledLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ABD088FBA191120EBF80AFB /* TBTiledLayer.swift */; };
+		5ABD0AC72095B405080AAD15 /* TBScene+TiledMap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ABD0B1AE883FCC9BE4790F9 /* TBScene+TiledMap.swift */; };
+		5ABD0AF9DDE2F844E89366E6 /* TBTiledAtlas.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ABD00196B0C0EE88C361F44 /* TBTiledAtlas.swift */; };
+		CDD9A20C7B6CFFB11B826CAA /* Pods_Tabby2D.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3979FA1DB303001D747B3829 /* Pods_Tabby2D.framework */; };
+		F113CCAD1C4871DD006C0836 /* TBTiledMap.swift in Sources */ = {isa = PBXBuildFile; fileRef = F113CCAC1C4871DD006C0836 /* TBTiledMap.swift */; };
 		F11DE3E41BE6A4E000CFDB2F /* Tabby2D.h in Headers */ = {isa = PBXBuildFile; fileRef = F11DE3E31BE6A4E000CFDB2F /* Tabby2D.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		F11DE3EB1BE6A4E000CFDB2F /* Tabby2D.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F11DE3E01BE6A4E000CFDB2F /* Tabby2D.framework */; };
 		F11DE4041BE6A5AB00CFDB2F /* TBScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = F11DE3FF1BE6A5AB00CFDB2F /* TBScene.swift */; };
@@ -31,6 +36,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		271BE801587C9033E0FE1E33 /* Pods-Tabby2D.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tabby2D.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Tabby2D/Pods-Tabby2D.debug.xcconfig"; sourceTree = "<group>"; };
+		3979FA1DB303001D747B3829 /* Pods_Tabby2D.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Tabby2D.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		5ABD00196B0C0EE88C361F44 /* TBTiledAtlas.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TBTiledAtlas.swift; sourceTree = "<group>"; };
+		5ABD088FBA191120EBF80AFB /* TBTiledLayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TBTiledLayer.swift; sourceTree = "<group>"; };
+		5ABD0B1AE883FCC9BE4790F9 /* TBScene+TiledMap.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "TBScene+TiledMap.swift"; sourceTree = "<group>"; };
+		BC6E22D0F99C35A6F0129FC2 /* Pods-Tabby2D.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tabby2D.release.xcconfig"; path = "Pods/Target Support Files/Pods-Tabby2D/Pods-Tabby2D.release.xcconfig"; sourceTree = "<group>"; };
+		F113CCAC1C4871DD006C0836 /* TBTiledMap.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TBTiledMap.swift; sourceTree = "<group>"; };
 		F11DE3E01BE6A4E000CFDB2F /* Tabby2D.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Tabby2D.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F11DE3E31BE6A4E000CFDB2F /* Tabby2D.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Tabby2D.h; sourceTree = "<group>"; };
 		F11DE3E51BE6A4E000CFDB2F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -53,6 +65,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F13044E31BE6A68B0071EE55 /* SpriteKit.framework in Frameworks */,
+				CDD9A20C7B6CFFB11B826CAA /* Pods_Tabby2D.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -67,6 +80,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		9502C5D26D53634EA1DBF864 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				271BE801587C9033E0FE1E33 /* Pods-Tabby2D.debug.xcconfig */,
+				BC6E22D0F99C35A6F0129FC2 /* Pods-Tabby2D.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		C817446FD2EED2A43C9E90D1 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				3979FA1DB303001D747B3829 /* Pods_Tabby2D.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		F11DE3D61BE6A4E000CFDB2F = {
 			isa = PBXGroup;
 			children = (
@@ -75,6 +105,8 @@
 				F11DE3E21BE6A4E000CFDB2F /* Tabby2D */,
 				F11DE3EE1BE6A4E000CFDB2F /* Tabby2DTests */,
 				F11DE3E11BE6A4E000CFDB2F /* Products */,
+				9502C5D26D53634EA1DBF864 /* Pods */,
+				C817446FD2EED2A43C9E90D1 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -147,6 +179,10 @@
 				F190230F1C36359E00DEA19C /* TBTileNode.swift */,
 				F19023111C36368E00DEA19C /* TBTiledScene.swift */,
 				F19023131C3636D500DEA19C /* TBIsometricTiledScene.swift */,
+				F113CCAC1C4871DD006C0836 /* TBTiledMap.swift */,
+				5ABD088FBA191120EBF80AFB /* TBTiledLayer.swift */,
+				5ABD00196B0C0EE88C361F44 /* TBTiledAtlas.swift */,
+				5ABD0B1AE883FCC9BE4790F9 /* TBScene+TiledMap.swift */,
 			);
 			path = Tiles;
 			sourceTree = "<group>";
@@ -169,10 +205,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = F11DE3F41BE6A4E100CFDB2F /* Build configuration list for PBXNativeTarget "Tabby2D" */;
 			buildPhases = (
+				622A416ADFC8ADCA3D463102 /* Check Pods Manifest.lock */,
 				F11DE3DB1BE6A4E000CFDB2F /* Sources */,
 				F11DE3DC1BE6A4E000CFDB2F /* Frameworks */,
 				F11DE3DD1BE6A4E000CFDB2F /* Headers */,
 				F11DE3DE1BE6A4E000CFDB2F /* Resources */,
+				0E9FE5F304B912AE857A04D5 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -254,6 +292,39 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		0E9FE5F304B912AE857A04D5 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Tabby2D/Pods-Tabby2D-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		622A416ADFC8ADCA3D463102 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		F11DE3DB1BE6A4E000CFDB2F /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -261,12 +332,16 @@
 			files = (
 				F13044E81BE6A9EC0071EE55 /* TBGameInput.swift in Sources */,
 				F19023141C3636D500DEA19C /* TBIsometricTiledScene.swift in Sources */,
+				F113CCAD1C4871DD006C0836 /* TBTiledMap.swift in Sources */,
 				F11DE4051BE6A5AB00CFDB2F /* TBDirector.swift in Sources */,
 				F19023101C36359E00DEA19C /* TBTileNode.swift in Sources */,
 				F11DE4041BE6A5AB00CFDB2F /* TBScene.swift in Sources */,
 				F13044E71BE6A9EC0071EE55 /* TBGameController.swift in Sources */,
 				F12304D71C421AC1005C908F /* SKScene+Extension.swift in Sources */,
 				F19023121C36368E00DEA19C /* TBTiledScene.swift in Sources */,
+				5ABD040D7846B7319E256FA5 /* TBTiledLayer.swift in Sources */,
+				5ABD0AF9DDE2F844E89366E6 /* TBTiledAtlas.swift in Sources */,
+				5ABD0AC72095B405080AAD15 /* TBScene+TiledMap.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -379,6 +454,7 @@
 		};
 		F11DE3F51BE6A4E100CFDB2F /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 271BE801587C9033E0FE1E33 /* Pods-Tabby2D.debug.xcconfig */;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
 				DEFINES_MODULE = YES;
@@ -397,6 +473,7 @@
 		};
 		F11DE3F61BE6A4E100CFDB2F /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = BC6E22D0F99C35A6F0129FC2 /* Pods-Tabby2D.release.xcconfig */;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
 				DEFINES_MODULE = YES;
