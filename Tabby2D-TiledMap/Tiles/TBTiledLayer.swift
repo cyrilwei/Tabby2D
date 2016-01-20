@@ -36,7 +36,7 @@ extension TBTiledLayer {
 
 extension TBTiledLayer: CustomDebugStringConvertible {
     public var debugDescription: String {
-        return "Layer: size: \(width)*\(height), data: \(data)"
+        return "LAYER \(name) - size: \(width)*\(height); data: \(data)"
     }
 }
 

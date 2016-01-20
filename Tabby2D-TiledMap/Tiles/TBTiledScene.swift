@@ -37,7 +37,7 @@ public class TBTiledScene: TBScene {
         let atlas = SKTextureAtlas(named: atlasName)
         let atlasTiles = map.atlases.first?.tiles ?? [String]()
         
-        for layer in map.layers {
+        for layer in map.segments.flatMap({ $0.layers }) {
             let mapNode = SKNode()
             mapNode.zPosition = layer.zPosition
 

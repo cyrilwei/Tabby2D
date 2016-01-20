@@ -25,6 +25,6 @@ extension TBTiledAtlas {
 
 extension TBTiledAtlas: CustomDebugStringConvertible {
     public var debugDescription: String {
-        return "Atlas: \(name), tiles: \(tiles)"
+        return "ATLAS \(name) - tiles: \(tiles)"
     }
 }

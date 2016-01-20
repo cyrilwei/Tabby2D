@@ -9,18 +9,18 @@
 import SpriteKit
 import SwiftyJSON
 
-public enum TBMapRenderOrder {
-    case RightDown
-    case RightUp
-    case LeftDown
-    case LeftUp
+public enum TBMapRenderOrder: String {
+    case RightDown = "RightDown"
+    case RightUp = "RightUp"
+    case LeftDown = "LeftDown"
+    case LeftUp = "LeftUp"
 }
 
 public enum TBMapOrientation: String {
-    case Orthogonal = "orthogonal"
-    case Isometric = "isometric"
-    case Staggered = "staggered"
-    case Hexagonal = "hexagonal"
+    case Orthogonal = "Orthogonal"
+    case Isometric = "Isometric"
+    case Staggered = "Staggered"
+    case Hexagonal = "Hexagonal"
 }
 
 public struct TBTiledMap {
@@ -38,8 +38,9 @@ public struct TBTiledMap {
     
     public var backgroundcolor: UIColor
 
-    public var layers: [TBTiledLayer]
     public var atlases: [TBTiledAtlas]
+    
+    public var segments: [TBTiledMapSegment]
 }
 
 extension TBTiledMap {
@@ -61,35 +62,36 @@ extension TBTiledMap {
         let height = json["height"].intValue
 
         let orientation = TBMapOrientation(rawValue: json["orientation"].stringValue) ?? TBMapOrientation.Isometric
+        let renderOrder = TBMapRenderOrder(rawValue: json["renderOrder"].stringValue) ?? TBMapRenderOrder.RightDown
 
         let tileWidth = CGFloat(json["tileWidth"].intValue)
         let tileHeight = CGFloat(json["tileHeight"].intValue)
-
-        var layers = [TBTiledLayer]()
-        for layerJSON in json["layers"].arrayValue {
-            layers.append(TBTiledLayer.parse(layerJSON))
-        }
 
         var atlases = [TBTiledAtlas]()
         for atlasJSON in json["atlases"].arrayValue {
             atlases.append(TBTiledAtlas.parse(atlasJSON))
         }
 
+        var segments = [TBTiledMapSegment]()
+        for segmentJSON in json["segments"].arrayValue {
+            segments.append(TBTiledMapSegment.parse(segmentJSON))
+        }
+
         return TBTiledMap(version: version
                 , width: width
                 , height: height
                 , orientation: orientation
-                , renderOrder: .RightDown
+                , renderOrder: renderOrder
                 , tileWidth: tileWidth
                 , tileHeight: tileHeight
                 , backgroundcolor: UIColor.blackColor()
-                , layers: layers
-                , atlases: atlases)
+                , atlases: atlases
+                , segments: segments)
     }
 }
 
 extension TBTiledMap: CustomDebugStringConvertible {
     public var debugDescription: String {
-        return "TMX(version: \(version)) map size: \(width)*\(height), tile size: \(tileWidth)*\(tileHeight). layers: \(layers). atlases: \(atlases)"
+        return "TBT MAP(version: \(version)) - size: \(width)*\(height); tile size: \(tileWidth)*\(tileHeight); atlases: \(atlases); segments: \(segments)"
     }
 }
