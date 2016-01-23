@@ -17,6 +17,8 @@ public struct TBTiledLayer {
 
     public var baseWorldLayer: WorldLayer
     public var zPosition: CGFloat
+    public var xOffset: Int
+    public var yOffset: Int
 
     public var data: [Int]
 }
@@ -28,9 +30,18 @@ extension TBTiledLayer {
         let height = json["height"].intValue
         let baseWorldLayer = WorldLayer.layerFromString(json["nodeName"].stringValue)
         let zPosition = CGFloat(json["zPosition"].doubleValue)
+        let xOffset = json["xOffset"].intValue
+        let yOffset = json["yOffset"].intValue
         let data = json["data"].arrayObject as? [Int] ?? [Int]()
 
-        return TBTiledLayer(name: name, width: width, height: height, baseWorldLayer: baseWorldLayer, zPosition: zPosition, data: data)
+        return TBTiledLayer(name: name
+                , width: width
+                , height: height
+                , baseWorldLayer: baseWorldLayer
+                , zPosition: zPosition
+                , xOffset: xOffset
+                , yOffset: yOffset
+                , data: data)
     }
 }
 

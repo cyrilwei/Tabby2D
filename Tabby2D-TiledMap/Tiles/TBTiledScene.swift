@@ -41,9 +41,16 @@ public class TBTiledScene: TBScene {
             let mapNode = SKNode()
             mapNode.zPosition = layer.zPosition
 
+            mapNode.position = CGPointMake(CGFloat(layer.xOffset - layer.yOffset) * halfTileWidth, CGFloat(layer.xOffset + layer.yOffset) * halfTileHeight)
+
             for y in 0..<layer.height {
                 for x in 0..<layer.width {
-                    let node = SKSpriteNode(texture: atlas.textureNamed(atlasTiles[layer.data[y * layer.width + x] - 1]), size: tileSize)
+                    let tileIndex = layer.data[y * layer.width + x] - 1
+                    if tileIndex < 0 {
+                        continue
+                    }
+                    
+                    let node = SKSpriteNode(texture: atlas.textureNamed(atlasTiles[tileIndex]), size: tileSize)
                     node.userInteractionEnabled = false
                     
                     node.position = CGPointMake(CGFloat(x - y) * halfTileWidth, CGFloat(x + y) * halfTileHeight)
