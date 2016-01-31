@@ -9,7 +9,7 @@
 import SpriteKit
 
 public enum WorldLayer: CGFloat {
-    case StaticBackground = -100, DynamicBackground = -50, Characters = 0, Foreground = 1000, Camera = 1024, HUD = 1100
+    case StaticBackground = -2048, DynamicBackground = -1024, Characters = 0, Foreground = 1024, Camera = 2048, HUD = 4096
 
     var nodeName: String {
         switch self {

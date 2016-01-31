@@ -41,6 +41,8 @@ public struct TBTiledMap {
     public var atlases: [TBTiledAtlas]
     
     public var segments: [TBTiledMapSegment]
+
+    public var layout: [Int]
 }
 
 extension TBTiledMap {
@@ -77,6 +79,8 @@ extension TBTiledMap {
             segments.append(TBTiledMapSegment.parse(segmentJSON))
         }
 
+        let layout =  json["layout"].arrayValue.map({ $0.intValue })
+
         return TBTiledMap(version: version
                 , width: width
                 , height: height
@@ -86,7 +90,8 @@ extension TBTiledMap {
                 , tileHeight: tileHeight
                 , backgroundcolor: UIColor.blackColor()
                 , atlases: atlases
-                , segments: segments)
+                , segments: segments
+                , layout: layout)
     }
 }
 
