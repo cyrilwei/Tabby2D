@@ -23,15 +23,22 @@ public enum TBMapOrientation: String {
     case Hexagonal = "Hexagonal"
 }
 
+public enum TBMapScrollingType: String {
+    case Infinite = "Infinite"
+    case Finite = "Finite"
+    case Fixed = "Fixed"
+}
+
 public struct TBTiledMap {
     public static let defaultTileSize = CGSizeMake(64.0, 32.0)
 
     public var version: Double
-    public var width: Int
-    public var height: Int
 
     public var orientation: TBMapOrientation
     public var renderOrder: TBMapRenderOrder
+
+    public var xScrollingType: TBMapScrollingType
+    public var yScrollingType: TBMapScrollingType
     
     public var tileWidth: CGFloat
     public var tileHeight: CGFloat
@@ -60,11 +67,12 @@ extension TBTiledMap {
 
     private static func parse(json: JSON) -> TBTiledMap {
         let version = json["version"].doubleValue
-        let width = json["width"].intValue
-        let height = json["height"].intValue
 
         let orientation = TBMapOrientation(rawValue: json["orientation"].stringValue) ?? TBMapOrientation.Isometric
         let renderOrder = TBMapRenderOrder(rawValue: json["renderOrder"].stringValue) ?? TBMapRenderOrder.RightDown
+        
+        let xScrollingType = TBMapScrollingType(rawValue: json["xScrollingType"].stringValue) ?? TBMapScrollingType.Finite
+        let yScrollingType = TBMapScrollingType(rawValue: json["yScrollingType"].stringValue) ?? TBMapScrollingType.Finite
 
         let tileWidth = CGFloat(json["tileWidth"].intValue)
         let tileHeight = CGFloat(json["tileHeight"].intValue)
@@ -79,13 +87,13 @@ extension TBTiledMap {
             segments.append(TBTiledMapSegment.parse(segmentJSON))
         }
 
-        let layout =  json["layout"].arrayValue.map({ $0.intValue })
+        let layout = json["layout"].arrayValue.map({ $0.intValue })
 
         return TBTiledMap(version: version
-                , width: width
-                , height: height
                 , orientation: orientation
                 , renderOrder: renderOrder
+                , xScrollingType: xScrollingType
+                , yScrollingType: yScrollingType
                 , tileWidth: tileWidth
                 , tileHeight: tileHeight
                 , backgroundcolor: UIColor.blackColor()
@@ -97,6 +105,6 @@ extension TBTiledMap {
 
 extension TBTiledMap: CustomDebugStringConvertible {
     public var debugDescription: String {
-        return "TBT MAP(version: \(version)) - size: \(width)*\(height); tile size: \(tileWidth)*\(tileHeight); atlases: \(atlases); segments: \(segments)"
+        return "Tabby2D Tiled Map(version: \(version)); tile size: \(tileWidth)*\(tileHeight); atlases: \(atlases); segments: \(segments); layout: \(layout)"
     }
 }

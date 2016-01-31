@@ -37,27 +37,37 @@ public class TBTiledScene: TBScene {
         let atlas = SKTextureAtlas(named: atlasName)
         let atlasTiles = map.atlases.first?.tiles ?? [String]()
         
-        for layer in map.segments.flatMap({ $0.layers }) {
-            let mapNode = SKNode()
-            mapNode.zPosition = layer.zPosition
+        var currentMapXOffset: Int = 0
+        var currentMapYOffset: Int = 0
+        
+        for segmentIndex in map.layout {
+            guard let segment = map.segments.filter({ $0.id == segmentIndex }).first else { continue }
 
-            mapNode.position = CGPointMake(CGFloat(layer.xOffset - layer.yOffset) * halfTileWidth, CGFloat(layer.xOffset + layer.yOffset) * halfTileHeight)
+            for layer in segment.layers {
+                let layerNode = SKNode()
+                layerNode.zPosition = layer.zPosition
+                layerNode.position = CGPointMake(CGFloat(layer.xOffset - layer.yOffset + currentMapXOffset - currentMapYOffset) * halfTileWidth, CGFloat(layer.xOffset + layer.yOffset + currentMapXOffset + currentMapYOffset) * halfTileHeight)
 
-            for y in 0..<layer.height {
-                for x in 0..<layer.width {
-                    let tileIndex = layer.data[y * layer.width + x] - 1
-                    if tileIndex < 0 {
-                        continue
+                self.addChild(layerNode, toLayer: layer.baseWorldLayer)
+                
+                for y in 0..<layer.height {
+                    for x in 0..<layer.width {
+                        let tileIndex = layer.data[y * layer.width + x] - 1
+                        if tileIndex < 0 {
+                            continue
+                        }
+                        
+                        let node = SKSpriteNode(texture: atlas.textureNamed(atlasTiles[tileIndex]), size: tileSize)
+                        node.userInteractionEnabled = false
+                        
+                        node.position = CGPointMake(CGFloat(x - y) * halfTileWidth, CGFloat(x + y) * halfTileHeight)
+                        layerNode.addChild(node)
                     }
-                    
-                    let node = SKSpriteNode(texture: atlas.textureNamed(atlasTiles[tileIndex]), size: tileSize)
-                    node.userInteractionEnabled = false
-                    
-                    node.position = CGPointMake(CGFloat(x - y) * halfTileWidth, CGFloat(x + y) * halfTileHeight)
-                    mapNode.addChild(node)
                 }
             }
-            self.addChild(mapNode, toLayer: layer.baseWorldLayer)
+            
+            currentMapXOffset += segment.width
+            currentMapYOffset = 0
         }
     }
 }

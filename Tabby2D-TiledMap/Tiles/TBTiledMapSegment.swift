@@ -10,6 +10,7 @@ import SpriteKit
 import SwiftyJSON
 
 public struct TBTiledMapSegment {
+    public var id: Int
     public var name: String
     public var width: Int
     public var height: Int
@@ -19,6 +20,7 @@ public struct TBTiledMapSegment {
 
 extension TBTiledMapSegment {
     public static func parse(json: JSON) -> TBTiledMapSegment {
+        let id = json["id"].intValue
         let name = json["name"].stringValue
         let width = json["width"].intValue
         let height = json["height"].intValue
@@ -28,7 +30,7 @@ extension TBTiledMapSegment {
             layers.append(TBTiledLayer.parse(layerJSON))
         }
 
-        return TBTiledMapSegment(name: name, width: width, height: height, layers: layers)
+        return TBTiledMapSegment(id: id, name: name, width: width, height: height, layers: layers)
     }
 }
 
