@@ -30,6 +30,8 @@ public enum WorldLayer: CGFloat {
 }
 
 public class TBScene: SKScene, TBGameInputDelegate {
+    private var lastUpdateTime: CFTimeInterval?
+
     public var theCamera: SKCameraNode = SKCameraNode() {
         didSet {
             oldValue.removeFromParent()
@@ -91,5 +93,21 @@ public class TBScene: SKScene, TBGameInputDelegate {
         self.addChild(theCamera)
 
         self.camera = theCamera
+    }
+    
+    public func updateWithTimeInterval(timeInterval: CGFloat) {
+        
+    }
+    
+    public override func update(currentTime: CFTimeInterval) {
+        guard let lastUpdateTime = self.lastUpdateTime else {
+            self.lastUpdateTime = currentTime
+            return
+        }
+        
+        let timeInterval = CGFloat(currentTime - lastUpdateTime)
+        self.lastUpdateTime = currentTime
+        
+        self.updateWithTimeInterval(timeInterval)
     }
 }

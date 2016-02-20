@@ -43,13 +43,16 @@ public struct TBTiledMap {
     public var tileWidth: CGFloat
     public var tileHeight: CGFloat
     
+    public var segmentWidth: Int
+    public var segmentHeight: Int
+    
     public var backgroundcolor: UIColor
 
     public var atlases: [TBTiledAtlas]
     
     public var segments: [TBTiledMapSegment]
 
-    public var layout: [Int]
+    public var layout: TBTiledMapLayout
 }
 
 extension TBTiledMap {
@@ -74,8 +77,11 @@ extension TBTiledMap {
         let xScrollingType = TBMapScrollingType(rawValue: json["xScrollingType"].stringValue) ?? TBMapScrollingType.Finite
         let yScrollingType = TBMapScrollingType(rawValue: json["yScrollingType"].stringValue) ?? TBMapScrollingType.Finite
 
-        let tileWidth = CGFloat(json["tileWidth"].intValue)
-        let tileHeight = CGFloat(json["tileHeight"].intValue)
+        let tileWidth = CGFloat(json["tileWidth"].doubleValue)
+        let tileHeight = CGFloat(json["tileHeight"].doubleValue)
+
+        let segmentWidth = json["segmentWidth"].intValue
+        let segmentHeight = json["segmentHeight"].intValue
 
         var atlases = [TBTiledAtlas]()
         for atlasJSON in json["atlases"].arrayValue {
@@ -96,15 +102,17 @@ extension TBTiledMap {
                 , yScrollingType: yScrollingType
                 , tileWidth: tileWidth
                 , tileHeight: tileHeight
+                , segmentWidth: segmentWidth
+                , segmentHeight: segmentHeight
                 , backgroundcolor: UIColor.blackColor()
                 , atlases: atlases
                 , segments: segments
-                , layout: layout)
+                , layout: TBTiledMapLayout(layout: layout))
     }
 }
 
 extension TBTiledMap: CustomDebugStringConvertible {
     public var debugDescription: String {
-        return "Tabby2D Tiled Map(version: \(version)); tile size: \(tileWidth)*\(tileHeight); atlases: \(atlases); segments: \(segments); layout: \(layout)"
+        return "Tabby2D Tiled Map(version: \(version)); tile size: \(tileWidth)*\(tileHeight); atlases: \(atlases); segments: \(segments), segment size: \(segmentWidth)*\(segmentHeight); layout: \(layout)"
     }
 }

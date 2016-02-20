@@ -14,7 +14,6 @@ public class TBTiledScene: TBScene {
     public var atlasName: String {
         return map?.atlases.first?.name ?? ""
     }
-    
 
     public func loadMap(map: TBTiledMap) {
         self.map = map
@@ -40,7 +39,7 @@ public class TBTiledScene: TBScene {
         var currentMapXOffset: Int = 0
         var currentMapYOffset: Int = 0
         
-        for segmentIndex in map.layout {
+        for segmentIndex in map.layout.layout {
             guard let segment = map.segments.filter({ $0.id == segmentIndex }).first else { continue }
 
             for layer in segment.layers {
@@ -66,7 +65,7 @@ public class TBTiledScene: TBScene {
                 }
             }
             
-            currentMapXOffset += segment.width
+            currentMapXOffset += map.segmentWidth
             currentMapYOffset = 0
         }
     }

@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		5ABD040D7846B7319E256FA5 /* TBTiledLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ABD088FBA191120EBF80AFB /* TBTiledLayer.swift */; };
+		5ABD09CDE5E6D221A72C55A0 /* TBTiledMapLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ABD081FCDDB5F3146982C1B /* TBTiledMapLayout.swift */; };
+		5ABD0AE4BAF5CF5A5B2615D2 /* TBInfiniteScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ABD085726DD5256A0C01751 /* TBInfiniteScene.swift */; };
 		5ABD0AF9DDE2F844E89366E6 /* TBTiledAtlas.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ABD00196B0C0EE88C361F44 /* TBTiledAtlas.swift */; };
 		CDD9A20C7B6CFFB11B826CAA /* Pods_Tabby2D.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3979FA1DB303001D747B3829 /* Pods_Tabby2D.framework */; };
 		F113CCAD1C4871DD006C0836 /* TBTiledMap.swift in Sources */ = {isa = PBXBuildFile; fileRef = F113CCAC1C4871DD006C0836 /* TBTiledMap.swift */; };
@@ -39,6 +41,8 @@
 		271BE801587C9033E0FE1E33 /* Pods-Tabby2D.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tabby2D.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Tabby2D/Pods-Tabby2D.debug.xcconfig"; sourceTree = "<group>"; };
 		3979FA1DB303001D747B3829 /* Pods_Tabby2D.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Tabby2D.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5ABD00196B0C0EE88C361F44 /* TBTiledAtlas.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TBTiledAtlas.swift; sourceTree = "<group>"; };
+		5ABD081FCDDB5F3146982C1B /* TBTiledMapLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TBTiledMapLayout.swift; sourceTree = "<group>"; };
+		5ABD085726DD5256A0C01751 /* TBInfiniteScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TBInfiniteScene.swift; sourceTree = "<group>"; };
 		5ABD088FBA191120EBF80AFB /* TBTiledLayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TBTiledLayer.swift; sourceTree = "<group>"; };
 		BC6E22D0F99C35A6F0129FC2 /* Pods-Tabby2D.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tabby2D.release.xcconfig"; path = "Pods/Target Support Files/Pods-Tabby2D/Pods-Tabby2D.release.xcconfig"; sourceTree = "<group>"; };
 		F113CCAC1C4871DD006C0836 /* TBTiledMap.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TBTiledMap.swift; sourceTree = "<group>"; };
@@ -183,6 +187,8 @@
 				F171B73E1C4F0D320094A41D /* TBTiledMapSegment.swift */,
 				5ABD088FBA191120EBF80AFB /* TBTiledLayer.swift */,
 				5ABD00196B0C0EE88C361F44 /* TBTiledAtlas.swift */,
+				5ABD085726DD5256A0C01751 /* TBInfiniteScene.swift */,
+				5ABD081FCDDB5F3146982C1B /* TBTiledMapLayout.swift */,
 			);
 			path = Tiles;
 			sourceTree = "<group>";
@@ -342,6 +348,8 @@
 				F19023121C36368E00DEA19C /* TBTiledScene.swift in Sources */,
 				5ABD040D7846B7319E256FA5 /* TBTiledLayer.swift in Sources */,
 				5ABD0AF9DDE2F844E89366E6 /* TBTiledAtlas.swift in Sources */,
+				5ABD0AE4BAF5CF5A5B2615D2 /* TBInfiniteScene.swift in Sources */,
+				5ABD09CDE5E6D221A72C55A0 /* TBTiledMapLayout.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
