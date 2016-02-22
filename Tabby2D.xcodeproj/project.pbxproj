@@ -24,7 +24,6 @@
 		F171B73F1C4F0D320094A41D /* TBTiledMapSegment.swift in Sources */ = {isa = PBXBuildFile; fileRef = F171B73E1C4F0D320094A41D /* TBTiledMapSegment.swift */; };
 		F19023101C36359E00DEA19C /* TBTileNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = F190230F1C36359E00DEA19C /* TBTileNode.swift */; };
 		F19023121C36368E00DEA19C /* TBTiledScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = F19023111C36368E00DEA19C /* TBTiledScene.swift */; };
-		F19023141C3636D500DEA19C /* TBIsometricTiledScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = F19023131C3636D500DEA19C /* TBIsometricTiledScene.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -60,7 +59,6 @@
 		F171B73E1C4F0D320094A41D /* TBTiledMapSegment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TBTiledMapSegment.swift; sourceTree = "<group>"; };
 		F190230F1C36359E00DEA19C /* TBTileNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TBTileNode.swift; sourceTree = "<group>"; };
 		F19023111C36368E00DEA19C /* TBTiledScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TBTiledScene.swift; sourceTree = "<group>"; };
-		F19023131C3636D500DEA19C /* TBIsometricTiledScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TBIsometricTiledScene.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -182,7 +180,6 @@
 			children = (
 				F190230F1C36359E00DEA19C /* TBTileNode.swift */,
 				F19023111C36368E00DEA19C /* TBTiledScene.swift */,
-				F19023131C3636D500DEA19C /* TBIsometricTiledScene.swift */,
 				F113CCAC1C4871DD006C0836 /* TBTiledMap.swift */,
 				F171B73E1C4F0D320094A41D /* TBTiledMapSegment.swift */,
 				5ABD088FBA191120EBF80AFB /* TBTiledLayer.swift */,
@@ -337,7 +334,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				F13044E81BE6A9EC0071EE55 /* TBGameInput.swift in Sources */,
-				F19023141C3636D500DEA19C /* TBIsometricTiledScene.swift in Sources */,
 				F113CCAD1C4871DD006C0836 /* TBTiledMap.swift in Sources */,
 				F11DE4051BE6A5AB00CFDB2F /* TBDirector.swift in Sources */,
 				F19023101C36359E00DEA19C /* TBTileNode.swift in Sources */,
