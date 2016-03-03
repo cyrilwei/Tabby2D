@@ -91,7 +91,7 @@ public class TBScene: SKScene, TBGameInputDelegate {
         theCamera.name = WorldLayer.Camera.nodeName
         theCamera.zPosition = WorldLayer.Camera.rawValue
         self.addChild(theCamera)
-
+        
         self.camera = theCamera
     }
     

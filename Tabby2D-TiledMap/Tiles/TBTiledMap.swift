@@ -30,7 +30,7 @@ public enum TBMapScrollingType: String {
 }
 
 public struct TBTiledMap {
-    public static let defaultTileSize = CGSizeMake(64.0, 32.0)
+    public static let defaultTileSize = CGSize(width: 64.0, height: 32.0)
 
     public var version: Double
 

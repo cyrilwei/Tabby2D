@@ -22,6 +22,8 @@ public class TBTiledScene: TBScene {
     public override func didMoveToView(view: SKView) {
         super.didMoveToView(view)
 
+        anchorPoint = CGPoint(x: 0.5, y: 0.5)
+
         addMapNodes()
     }
     
@@ -31,7 +33,7 @@ public class TBTiledScene: TBScene {
         let halfTileWidth = map.tileWidth / 2.0
         let halfTileHeight = map.tileHeight / 2.0
         
-        let tileSize = CGSizeMake(map.tileWidth, map.tileHeight)
+        let tileSize = CGSize(width: map.tileWidth, height: map.tileHeight)
         
         let atlas = SKTextureAtlas(named: atlasName)
         let atlasTiles = map.atlases.first?.tiles ?? [String]()
@@ -45,7 +47,7 @@ public class TBTiledScene: TBScene {
             for layer in segment.layers {
                 let layerNode = SKNode()
                 layerNode.zPosition = layer.zPosition
-                layerNode.position = CGPointMake(CGFloat(layer.xOffset - layer.yOffset + currentMapXOffset - currentMapYOffset) * halfTileWidth, CGFloat(layer.xOffset + layer.yOffset + currentMapXOffset + currentMapYOffset) * halfTileHeight)
+                layerNode.position = CGPoint(x: CGFloat(layer.xOffset - layer.yOffset + currentMapXOffset - currentMapYOffset) * halfTileWidth, y: CGFloat(layer.xOffset + layer.yOffset + currentMapXOffset + currentMapYOffset) * halfTileHeight)
 
                 self.addChild(layerNode, toLayer: layer.baseWorldLayer)
                 
@@ -59,7 +61,7 @@ public class TBTiledScene: TBScene {
                         let node = SKSpriteNode(texture: atlas.textureNamed(atlasTiles[tileIndex]), size: tileSize)
                         node.userInteractionEnabled = false
                         
-                        node.position = CGPointMake(CGFloat(x - y) * halfTileWidth, CGFloat(x + y) * halfTileHeight)
+                        node.position = CGPoint(x: CGFloat(x - y) * halfTileWidth, y: CGFloat(x + y) * halfTileHeight)
                         layerNode.addChild(node)
                     }
                 }
